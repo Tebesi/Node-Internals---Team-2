@@ -2,7 +2,7 @@
 
 Hi Team, 
 
-I created repository. However, I am learning how to create repository, please give me advice if I have done something wrong. 
+I created repository. However, I am learning how to create repository, please feel free to give me advice if I have done something wrong. 
 
 As you all aware of the task we have been given for research: "Node internals: Node event loop, Node Core modules, async/sync (non-blocking operation). 
 
