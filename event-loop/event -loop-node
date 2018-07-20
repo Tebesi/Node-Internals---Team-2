@@ -1,0 +1,24 @@
+What is Event Loop?
+The event loop is what allows Node.js to perform non-blocking I/O operation. In JavaScript is single threaded. Modern Kernels are multi-threaded, they can handle multi operations executing in the background. Kernels tells Node.js with appropriate callback may added to the poll queue to eventually be executed. 
+
+This is event loop's order of operations.
+
+1. Timers: executes callback scheduled by setTimeout() and setInterval().
+2. Pending callback: executes I/O callback deferred to the next loop iteration.
+3. Idle, prepare: only used internally. 
+4. Poll: retrieve new I/O events; Node will block here when appropriate.
+5. Check: setImmediate() callbacks are invoked here.
+6. Close callbacks: Some close callbacks, e.g socket.on('close', ...).
+
+Timers sets the threshold at which the callback will be executed. the important is each phase has a first in and first out (FIFO) queue of callbacks will be executed.
+
+I/O callbacks: this phase executes system error callbacks such as Transmission Control Protocol (TCP), socket connection error ECONNREFUSED. 
+
+Poll: This phase is where the most work is done. this phase does two things. 
+
+1. executing scripts for timers whose threshold has elapsed.
+2. Processing events in the poll queue. 
+
+Check: this phase the event loop executes all callbacks in the queue. 
+
+
