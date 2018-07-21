@@ -1,0 +1,12 @@
+// The queryString module provides utilities for parsing and formatting URL query strings. It can be accessed using: 
+
+const querystring = require("querystring");
+
+queryString Methods
+
+Method                  Description
+
+querystring.escape() : returns an escaped querysting
+querystring.parse()  : Parses the querysting and returns an object
+querysting.stringify(): Stringfies an object, and returns a query sting
+querysting.unescape() : Returns an unescaped query sting
